@@ -77,14 +77,13 @@ data = {
 data['DayofMonth'] = data['DayofMonth'].day
 
 input_data = pd.DataFrame([data])
-
 if st.button('Submit'):
     
   Delivery_Status = model.predict(input_data)[0]
   if Delivery_Status == 0.0:
     # st.header(f"The predicted delivery status is: {Delivery_Status}")
-        st.header(f"  delivery not done {Delivery_Status}")
+        st.header(f" 🚫  Delivered Not Done? A  – we’re working on it.  {Delivery_Status}")
   else:
-        st.header(f"  delivery done {Delivery_Status}")
+        st.header(f" ✅ Delivered Done! You'll see a  – success.  {Delivery_Status}")
 
   
